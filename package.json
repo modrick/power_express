@@ -1,0 +1,28 @@
+{
+  "name": "power-express",
+  "version": "0.0.1",
+  "description": "Strengthening Express, so it's more developer-friendly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/iAmHades/power_express.git"
+  },
+  "keywords": [
+    "express",
+    "power",
+    "koa",
+    "generator"
+  ],
+  "author": "hades",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iAmHades/power_express/issues"
+  },
+  "homepage": "https://github.com/iAmHades/power_express#readme",
+  "dependencies": {
+    "co":"4.6.0"
+  },
+}
