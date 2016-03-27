@@ -1,6 +1,6 @@
 {
   "name": "power-express",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Strengthening Express, so it's more developer-friendly.",
   "main": "src/index.js",
   "scripts": {

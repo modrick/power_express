@@ -18,9 +18,11 @@ app.get('/', function*(req, res) {
 ```
 为统一处理异常，添加一个addErrorHandle方法，如下使用
 ```javascript
-app.get('/', function*(req, res) {
-	var result = yield readFile(__dirname + '/test.js')
-	return res.send(String(result))
+app.addErrorHandle(function(err, req, res) {
+	res.json({
+		code: 500,
+		data: err.toString()
+	})
 })
 ```
 目前支持: 
