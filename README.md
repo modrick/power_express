@@ -1,2 +1,3 @@
-##持续开发中，还未完成，请等待。
-##comming soon,please wait.
+###Express的增强插件
+Express的api，以及架构，个人认为比koa更加合理。但是Koa中支持使用Generator来处理异步回调，确实非常的有必要。
+所以Power Express插件，就是为了在Express中引入Generator，使得异步编程和异常的处理更加的友好。

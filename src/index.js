@@ -6,14 +6,14 @@ module.exports = function(express) {
 
 	let errorHandle;
 
-	// 返回express
+	// 返回express对象
 	function coexpress() {
 		let app = express()
-			// 添加中间件的方式，传递需要自定义的，同时通过装配器模式进行功能追加
+			// 以添加错误处理函数，对业务层的错误异常进行自定义处理
 		app.addErrorHandle = function(func) {
 				errorHandle = func
-			}
-			//只针对4种框架中用到的方法进行重写
+		}
+			//只针对部分框架中用到的方法进行重写
 		app.get = wrapAppMethod(app.get)
 		app.post = wrapAppMethod(app.post)
 		app.delete = wrapAppMethod(app.delete)
@@ -33,7 +33,7 @@ module.exports = function(express) {
 	function convertGenerators(func) {
 		return !isGenerator(func) ? func : function(req, res, next) {
 			let fn = co.wrap(func)
-			return fn(req, res, next).then(function(data) {
+		    fn(req, res, next).then(function(data) {
 				return next()
 			}).catch(function(err) {
 				if (errorHandle) {
@@ -41,7 +41,6 @@ module.exports = function(express) {
 				} else {
 					return next(err)
 				}
-
 			})
 		}
 	}
