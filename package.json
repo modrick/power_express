@@ -2,7 +2,7 @@
   "name": "power-express",
   "version": "0.0.1",
   "description": "Strengthening Express, so it's more developer-friendly.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,4 +25,7 @@
   "dependencies": {
     "co":"4.6.0"
   },
+  "devDependencies":{
+    "express":"4.13.4"
+  }
 }

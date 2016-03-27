@@ -18,6 +18,9 @@ module.exports = function(express) {
 		app.post = wrapAppMethod(app.post)
 		app.delete = wrapAppMethod(app.delete)
 		app.put = wrapAppMethod(app.put)
+		app.use = wrapAppMethod(app.use)
+		app.all = wrapAppMethod(app.use)
+		app.param = wrapAppMethod(app.param)
 		return app
 	}
 
